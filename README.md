@@ -33,13 +33,20 @@ npm run storybook        # http://localhost:6006
 | `npm run build` | Library build: `dist/index.js`, `dist/index.css` and `.d.ts` files |
 | `npm run typecheck` | `tsc --noEmit` |
 | `npm run lint` | ESLint (TypeScript + React hooks rules) |
-| `npm test` | Vitest + Testing Library unit tests |
+| `npm test` | Vitest: unit tests (jsdom) plus every story rendered in headless Chromium via the Storybook Vitest addon |
+| `npm run test:unit` | Unit tests only (fast) |
+
+Stories double as tests: the **Storybook Vitest addon** renders each story in Chromium and fails on
+render errors, play-function failures and accessibility violations. In Storybook, the *Testing module*
+panel in the sidebar runs them on demand. On every push, the GitHub Actions workflow in
+`.github/workflows/storybook.yml` runs the checks and publishes the static Storybook to GitHub Pages.
 
 ## Project structure
 
 ```
 my-ui-library/
-├─ .storybook/            Storybook config: framework, docs + a11y addons, theme toolbar, preview styles
+├─ .github/workflows/     CI: typecheck, lint, tests, builds, GitHub Pages deploy of the Storybook
+├─ .storybook/            Storybook config: framework, docs + a11y + vitest addons, theme toolbar, preview styles
 ├─ src/
 │  ├─ index.ts            Public entry point: everything the library exports
 │  ├─ styles/
@@ -57,7 +64,7 @@ my-ui-library/
 │  ├─ utils/              cx() class joiner, shared types (Size, Tone)
 │  └─ docs/               Introduction, Theming and Design System pages
 ├─ tests/setup.ts         Vitest setup (jest-dom matchers, jsdom shims)
-├─ vite.config.ts         Library build (ESM + CSS, React external) and Vitest config
+├─ vite.config.ts         Library build (ESM + CSS, React external) and Vitest projects (unit + storybook)
 ├─ tsconfig.json          Type-check config · tsconfig.build.json emits .d.ts only
 └─ package.json           peerDependencies: react, react-dom
 ```

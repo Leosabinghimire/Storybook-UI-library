@@ -1,5 +1,7 @@
 /// <reference types="vitest/config" />
 import { fileURLToPath } from "node:url";
+import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
+import { playwright } from "@vitest/browser-playwright";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
@@ -14,10 +16,28 @@ export default defineConfig({
     sourcemap: true,
   },
   test: {
-    environment: "jsdom",
-    globals: true,
-    setupFiles: ["./tests/setup.ts"],
-    include: ["src/**/*.test.{ts,tsx}"],
-    css: true,
+    projects: [
+      {
+        // Unit tests: fast, in jsdom.
+        extends: true,
+        test: {
+          name: "unit",
+          environment: "jsdom",
+          globals: true,
+          setupFiles: ["./tests/setup.ts"],
+          include: ["src/**/*.test.{ts,tsx}"],
+          css: true,
+        },
+      },
+      {
+        // Every story becomes a test that renders in headless Chromium (smoke test + play functions + a11y).
+        extends: true,
+        plugins: [storybookTest({ configDir: fileURLToPath(new URL("./.storybook", import.meta.url)) })],
+        test: {
+          name: "storybook",
+          browser: { enabled: true, headless: true, provider: playwright(), instances: [{ browser: "chromium" }] },
+        },
+      },
+    ],
   },
 });

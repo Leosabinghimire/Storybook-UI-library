@@ -27,6 +27,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "test": "vitest run",
+    "test:unit": "vitest run --project unit",
     "test:watch": "vitest"
   },
   "peerDependencies": {
@@ -37,6 +38,7 @@
     "@eslint/js": "9.39.5",
     "@storybook/addon-a11y": "10.6.3",
     "@storybook/addon-docs": "10.6.3",
+    "@storybook/addon-vitest": "10.6.3",
     "@storybook/react-vite": "10.6.3",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.3",
@@ -45,15 +47,19 @@
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "5.2.0",
+    "@vitest/browser": "5.0.5",
+    "@vitest/browser-playwright": "5.0.5",
+    "@vitest/coverage-v8": "5.0.5",
     "eslint": "9.39.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "jsdom": "26.1.0",
+    "playwright": "1.64.1",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "storybook": "10.6.3",
     "typescript": "5.9.3",
     "typescript-eslint": "8.72.0",
     "vite": "7.3.7",
-    "vitest": "3.2.7"
+    "vitest": "5.0.5"
   }
 }
