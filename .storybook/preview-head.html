@@ -1,3 +1,29 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script>
+  // After a redeploy, a browser that cached the previous build may request story chunks that no longer
+  // exist ("Failed to fetch dynamically imported module"). Reload once to pick up the new build.
+  (function () {
+    var KEY = "sb-stale-chunk-reload";
+    function isStaleChunk(message) {
+      return /Failed to fetch dynamically imported module|Importing a module script failed|error loading dynamically imported module/i.test(message || "");
+    }
+    function reloadOnce() {
+      try {
+        if (sessionStorage.getItem(KEY) === location.href) return;
+        sessionStorage.setItem(KEY, location.href);
+      } catch (e) {
+        /* storage unavailable: still reload once per page load */
+      }
+      location.reload();
+    }
+    window.addEventListener("unhandledrejection", function (event) {
+      var reason = event.reason;
+      if (isStaleChunk(reason && (reason.message || String(reason)))) reloadOnce();
+    });
+    window.addEventListener("error", function (event) {
+      if (isStaleChunk(event.message)) reloadOnce();
+    });
+  })();
+</script>
