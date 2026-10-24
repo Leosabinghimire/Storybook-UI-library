@@ -8,23 +8,23 @@
   pointer-events: none;
 }
 
-.top-right {
+.topRight {
   top: var(--ui-space-4);
   right: var(--ui-space-4);
 }
 
-.top-center {
+.topCenter {
   top: var(--ui-space-4);
   left: 50%;
   transform: translateX(-50%);
 }
 
-.bottom-right {
+.bottomRight {
   bottom: var(--ui-space-4);
   right: var(--ui-space-4);
 }
 
-.bottom-center {
+.bottomCenter {
   bottom: var(--ui-space-4);
   left: 50%;
   transform: translateX(-50%);

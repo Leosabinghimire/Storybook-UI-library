@@ -25,3 +25,4 @@ class ResizeObserverStub {
   disconnect() {}
 }
 window.ResizeObserver = ResizeObserverStub as unknown as typeof ResizeObserver;
+window.HTMLElement.prototype.scrollIntoView = vi.fn();

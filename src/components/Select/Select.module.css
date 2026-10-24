@@ -1,0 +1,131 @@
+.root {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+}
+
+.trigger[aria-expanded="true"] {
+  border-color: var(--ui-primary);
+  box-shadow: var(--ui-focus-ring);
+}
+
+.value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  color: var(--ui-text-muted);
+}
+
+.chevron {
+  transition: transform var(--ui-duration-normal) var(--ui-ease);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: var(--ui-z-dropdown);
+  max-height: 17.5rem;
+  margin: 0;
+  padding: var(--ui-space-1);
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-surface);
+  box-shadow: var(--ui-shadow-md);
+  animation: pop-in var(--ui-duration-fast) var(--ui-ease);
+}
+
+.listTop {
+  top: auto;
+  bottom: calc(100% + 4px);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ui-space-2);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border-radius: var(--ui-radius-sm);
+  color: var(--ui-text);
+  font-size: var(--ui-text-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.active {
+  background: var(--ui-surface-hover);
+}
+
+.selected {
+  color: var(--ui-primary-text);
+  font-weight: var(--ui-weight-medium);
+}
+
+.selected.active {
+  background: var(--ui-primary-soft);
+}
+
+.disabled {
+  color: var(--ui-text-subtle);
+  cursor: not-allowed;
+}
+
+.optionText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.optionLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.optionDescription {
+  font-size: var(--ui-text-xs);
+  color: var(--ui-text-muted);
+}
+
+.check {
+  flex-shrink: 0;
+  color: var(--ui-primary);
+}
+
+.empty {
+  padding: var(--ui-space-3);
+  color: var(--ui-text-muted);
+  font-size: var(--ui-text-sm);
+  text-align: center;
+}
+
+/* Keyframes live in the module that uses them: CSS Modules scopes animation names, so global keyframes would not resolve. */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

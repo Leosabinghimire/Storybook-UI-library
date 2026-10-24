@@ -2,6 +2,8 @@ import type { HTMLAttributes, ReactNode } from "react";
 import { cx } from "@/utils/cx";
 import styles from "./Card.module.css";
 
+const PADDING = { none: styles.paddingNone, sm: styles.paddingSm, md: styles.paddingMd, lg: styles.paddingLg } as const;
+
 export interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, "title"> {
   title?: ReactNode;
   description?: ReactNode;
@@ -29,7 +31,7 @@ export function Card({ title, description, actions, footer, padding = "md", elev
           {actions && <div className={styles.actions}>{actions}</div>}
         </div>
       )}
-      {children !== undefined && <div className={cx(styles.body, styles[`padding-${padding}`])}>{children}</div>}
+      {children !== undefined && <div className={cx(styles.body, PADDING[padding])}>{children}</div>}
       {footer && <div className={styles.footer}>{footer}</div>}
     </div>
   );

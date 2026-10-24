@@ -11,7 +11,7 @@ and dark themes, so the only runtime dependency is React.
 | Category | Components |
 |---|---|
 | Actions | `Button`, `IconButton`, `Dropdown` |
-| Forms | `TextInput`, `PasswordInput`, `SearchInput`, `Textarea`, `Select`, `Checkbox`, `Radio` + `RadioGroup`, `Switch`, `FormField` |
+| Forms | `TextInput`, `PasswordInput`, `SearchInput`, `Textarea`, `Select` (themed) + `NativeSelect`, `Checkbox`, `Radio` + `RadioGroup`, `Switch`, `FormField` |
 | Data display | `Badge`, `StatusIndicator`, `Card`, `StatCard`, `Table` (sorting + pagination), `Pagination` |
 | Feedback | `Alert`, `ToastProvider` + `useToast`, `Tooltip`, `Spinner`, `Skeleton` + `SkeletonText`, `EmptyState` |
 | Overlays | `Modal`, `ConfirmDialog` |

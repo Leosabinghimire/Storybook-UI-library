@@ -7,6 +7,13 @@ import { cx } from "@/utils/cx";
 import type { Tone } from "@/utils/types";
 import styles from "./Toast.module.css";
 
+const POSITION: Record<ToastPosition, string | undefined> = {
+  "top-right": styles.topRight,
+  "top-center": styles.topCenter,
+  "bottom-right": styles.bottomRight,
+  "bottom-center": styles.bottomCenter,
+};
+
 export interface ToastOptions {
   title?: ReactNode;
   message: ReactNode;
@@ -74,7 +81,7 @@ export function ToastProvider({ children, position = "top-right", limit = 4, def
       {children}
       {typeof document !== "undefined" &&
         createPortal(
-          <div role="region" aria-label="Notifications" aria-live="polite" className={cx(styles.region, styles[position])}>
+          <div role="region" aria-label="Notifications" aria-live="polite" className={cx(styles.region, POSITION[position])}>
             {toasts.map((toast) => (
               <ToastItem key={toast.id} toast={toast} onDismiss={() => dismiss(toast.id)} />
             ))}

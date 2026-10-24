@@ -16,6 +16,7 @@ export { PasswordInput, type PasswordInputProps } from "./components/Input/Passw
 export { SearchInput, type SearchInputProps } from "./components/Input/SearchInput";
 export { Textarea, type TextareaProps } from "./components/Input/Textarea";
 export { Select, type SelectOption, type SelectProps } from "./components/Select/Select";
+export { NativeSelect, type NativeSelectOption, type NativeSelectProps } from "./components/Select/NativeSelect";
 export { Checkbox, type CheckboxProps } from "./components/Checkbox/Checkbox";
 export { Radio, RadioGroup, type RadioGroupProps, type RadioProps } from "./components/Radio/Radio";
 export { Switch, type SwitchProps } from "./components/Switch/Switch";

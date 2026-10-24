@@ -56,23 +56,23 @@
   flex: 1;
 }
 
-.padding-none {
+.paddingNone {
   padding: 0;
 }
 
-.padding-sm {
+.paddingSm {
   padding: var(--ui-space-3);
 }
 
-.padding-md {
+.paddingMd {
   padding: var(--ui-space-5);
 }
 
-.padding-lg {
+.paddingLg {
   padding: var(--ui-space-8);
 }
 
-.header + .padding-none {
+.header + .paddingNone {
   padding-top: var(--ui-space-4);
 }
 
