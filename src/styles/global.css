@@ -21,41 +21,6 @@ body:has(> .ui-root) {
   box-shadow: var(--ui-focus-ring);
 }
 
-@keyframes ui-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes ui-shimmer {
-  from {
-    background-position: 200% 0;
-  }
-  to {
-    background-position: -200% 0;
-  }
-}
-
-@keyframes ui-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes ui-pop-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .ui-root *,
   .ui-root *::before,

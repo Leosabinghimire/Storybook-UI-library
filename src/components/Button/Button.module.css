@@ -24,6 +24,12 @@
   opacity: 0.55;
 }
 
+/* A loading button is busy, not unavailable: keep it at full strength so the spinner reads clearly. */
+.root.loading:disabled {
+  cursor: progress;
+  opacity: 1;
+}
+
 .root:focus-visible {
   outline: none;
   box-shadow: var(--ui-focus-ring);

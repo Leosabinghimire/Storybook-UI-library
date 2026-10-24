@@ -16,7 +16,7 @@
   font-weight: var(--ui-weight-medium);
   line-height: 1.4;
   box-shadow: var(--ui-shadow-md);
-  animation: ui-fade-in var(--ui-duration-fast) var(--ui-ease);
+  animation: fade-in var(--ui-duration-fast) var(--ui-ease);
   pointer-events: none;
 }
 
@@ -42,4 +42,14 @@
   left: calc(100% + 6px);
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Keyframes live in the module that uses them: CSS Modules scopes animation names, so global keyframes would not resolve. */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

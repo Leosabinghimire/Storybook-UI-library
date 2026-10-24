@@ -16,7 +16,7 @@
   border-radius: var(--ui-radius-md);
   background: var(--ui-surface);
   box-shadow: var(--ui-shadow-md);
-  animation: ui-pop-in var(--ui-duration-fast) var(--ui-ease);
+  animation: pop-in var(--ui-duration-fast) var(--ui-ease);
 }
 
 .alignEnd {
@@ -68,4 +68,16 @@
 
 .danger .icon {
   color: inherit;
+}
+
+/* Keyframes live in the module that uses them: CSS Modules scopes animation names, so global keyframes would not resolve. */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
