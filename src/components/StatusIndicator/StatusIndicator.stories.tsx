@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { StatusIndicator } from "./StatusIndicator";
+import sourceStatusIndicatorTsx from "./StatusIndicator.tsx?raw";
+import sourceStatusIndicatorModuleCss from "./StatusIndicator.module.css?raw";
 
 const meta = {
   title: "Data Display/StatusIndicator",
@@ -10,6 +12,7 @@ const meta = {
     tone: { control: "select", options: [undefined, "neutral", "primary", "success", "warning", "danger", "info"] },
     size: { control: "radio", options: ["sm", "md"] },
   },
+  parameters: { componentSource: { files: { "StatusIndicator.tsx": sourceStatusIndicatorTsx, "StatusIndicator.module.css": sourceStatusIndicatorModuleCss } } },
 } satisfies Meta<typeof StatusIndicator>;
 
 export default meta;

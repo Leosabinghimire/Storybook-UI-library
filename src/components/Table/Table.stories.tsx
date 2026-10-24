@@ -5,6 +5,8 @@ import { Button } from "@/components/Button/Button";
 import { EmptyState } from "@/components/EmptyState/EmptyState";
 import { IconPlus } from "@/icons";
 import { Table, type Column, type SortState } from "./Table";
+import sourceTableTsx from "./Table.tsx?raw";
+import sourceTableModuleCss from "./Table.module.css?raw";
 
 interface Customer {
   id: number;
@@ -54,6 +56,7 @@ const meta = {
   args: { columns, data: CUSTOMERS, caption: "Customers" },
   argTypes: { columns: { control: false }, data: { control: false } },
   parameters: {
+    componentSource: { files: { "Table.tsx": sourceTableTsx, "Table.module.css": sourceTableModuleCss } },
     layout: "padded",
     docs: {
       description: {

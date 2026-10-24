@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Badge } from "@/components/Badge/Badge";
 import { Button } from "@/components/Button/Button";
 import { Card } from "./Card";
+import sourceCardTsx from "./Card.tsx?raw";
+import sourceCardModuleCss from "./Card.module.css?raw";
 
 const meta = {
   title: "Data Display/Card",
@@ -24,6 +26,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "Card.tsx": sourceCardTsx, "Card.module.css": sourceCardModuleCss } } },
 } satisfies Meta<typeof Card>;
 
 export default meta;

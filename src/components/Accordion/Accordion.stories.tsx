@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Accordion } from "./Accordion";
+import sourceAccordionTsx from "./Accordion.tsx?raw";
+import sourceAccordionModuleCss from "./Accordion.module.css?raw";
 
 const items = [
   { value: "refunds", title: "How do refunds work?", content: "Request a refund within 14 days of purchase. Refunds are returned to the original payment method within 5–10 business days." },
@@ -21,6 +23,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "Accordion.tsx": sourceAccordionTsx, "Accordion.module.css": sourceAccordionModuleCss } } },
 } satisfies Meta<typeof Accordion>;
 
 export default meta;

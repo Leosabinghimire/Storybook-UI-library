@@ -2,11 +2,14 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
 import { Pagination } from "./Pagination";
+import sourcePaginationTsx from "./Pagination.tsx?raw";
+import sourcePaginationModuleCss from "./Pagination.module.css?raw";
 
 const meta = {
   title: "Data Display/Pagination",
   component: Pagination,
   args: { page: 1, pageSize: 10, total: 95, onChange: fn() },
+  parameters: { componentSource: { files: { "Pagination.tsx": sourcePaginationTsx, "Pagination.module.css": sourcePaginationModuleCss } } },
 } satisfies Meta<typeof Pagination>;
 
 export default meta;

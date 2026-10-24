@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Textarea } from "./Textarea";
+import sourceTextareaTsx from "./Textarea.tsx?raw";
+import sourceInputModuleCss from "./Input.module.css?raw";
 
 const meta = {
   title: "Forms/Textarea",
@@ -12,6 +14,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "Textarea.tsx": sourceTextareaTsx, "Input.module.css": sourceInputModuleCss } } },
 } satisfies Meta<typeof Textarea>;
 
 export default meta;

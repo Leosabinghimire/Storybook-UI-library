@@ -3,6 +3,8 @@ import { Button } from "@/components/Button/Button";
 import { Card } from "@/components/Card/Card";
 import { IconPlus, IconSearch } from "@/icons";
 import { EmptyState } from "./EmptyState";
+import sourceEmptyStateTsx from "./EmptyState.tsx?raw";
+import sourceEmptyStateModuleCss from "./EmptyState.module.css?raw";
 
 const meta = {
   title: "Feedback/EmptyState",
@@ -22,6 +24,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "EmptyState.tsx": sourceEmptyStateTsx, "EmptyState.module.css": sourceEmptyStateModuleCss } } },
 } satisfies Meta<typeof EmptyState>;
 
 export default meta;

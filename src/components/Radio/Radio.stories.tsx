@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Radio, RadioGroup } from "./Radio";
+import sourceRadioTsx from "./Radio.tsx?raw";
+import sourceRadioModuleCss from "./Radio.module.css?raw";
 
 const meta = {
   title: "Forms/RadioGroup",
@@ -18,6 +20,7 @@ const meta = {
     ),
   },
   argTypes: { children: { control: false }, value: { control: false } },
+  parameters: { componentSource: { files: { "Radio.tsx": sourceRadioTsx, "Radio.module.css": sourceRadioModuleCss } } },
 } satisfies Meta<typeof RadioGroup>;
 
 export default meta;

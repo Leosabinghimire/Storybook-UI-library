@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IconCheck } from "@/icons";
 import { Badge } from "./Badge";
+import sourceBadgeTsx from "./Badge.tsx?raw";
+import sourceBadgeModuleCss from "./Badge.module.css?raw";
 
 const TONES = ["neutral", "primary", "success", "warning", "danger", "info"] as const;
 
@@ -14,6 +16,7 @@ const meta = {
     size: { control: "radio", options: ["sm", "md"] },
     icon: { control: false },
   },
+  parameters: { componentSource: { files: { "Badge.tsx": sourceBadgeTsx, "Badge.module.css": sourceBadgeModuleCss } } },
 } satisfies Meta<typeof Badge>;
 
 export default meta;

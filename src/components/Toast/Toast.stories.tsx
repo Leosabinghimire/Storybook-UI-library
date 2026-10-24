@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "@/components/Button/Button";
 import { ToastProvider, useToast } from "./Toast";
+import sourceToastTsx from "./Toast.tsx?raw";
+import sourceToastModuleCss from "./Toast.module.css?raw";
 
 const meta = {
   title: "Feedback/Toast",
   component: ToastProvider,
   parameters: {
+    componentSource: { files: { "Toast.tsx": sourceToastTsx, "Toast.module.css": sourceToastModuleCss } },
     docs: {
       description: {
         component: "Mount `ToastProvider` once, then call `useToast()` from any component. Toasts auto-dismiss (errors stay longer) and are announced through an aria-live region.",

@@ -1,13 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Button } from "@/components/Button/Button";
 import { Tooltip } from "./Tooltip";
+import sourceTooltipTsx from "./Tooltip.tsx?raw";
+import sourceTooltipModuleCss from "./Tooltip.module.css?raw";
 
 const meta = {
   title: "Feedback/Tooltip",
   component: Tooltip,
   args: { content: "Copies the link to your clipboard", children: <Button variant="outline">Copy link</Button> },
   argTypes: { placement: { control: "select", options: ["top", "bottom", "left", "right"] }, children: { control: false } },
-  parameters: { docs: { description: { component: "Appears on hover and keyboard focus; Escape hides it. The trigger must be focusable (buttons, links, inputs)." } } },
+  parameters: {
+    componentSource: { files: { "Tooltip.tsx": sourceTooltipTsx, "Tooltip.module.css": sourceTooltipModuleCss } }, docs: { description: { component: "Appears on hover and keyboard focus; Escape hides it. The trigger must be focusable (buttons, links, inputs)." } } },
   decorators: [
     (Story) => (
       <div style={{ padding: 48, display: "flex", justifyContent: "center" }}>

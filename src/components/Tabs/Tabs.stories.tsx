@@ -4,6 +4,8 @@ import { fn } from "storybook/test";
 import { Badge } from "@/components/Badge/Badge";
 import { IconInbox, IconInfo, IconSearch } from "@/icons";
 import { Tabs } from "./Tabs";
+import sourceTabsTsx from "./Tabs.tsx?raw";
+import sourceTabsModuleCss from "./Tabs.module.css?raw";
 
 const items = [
   { value: "overview", label: "Overview", content: <p style={{ margin: 0 }}>Project summary, owners and recent activity.</p> },
@@ -17,7 +19,8 @@ const meta = {
   component: Tabs,
   args: { items, onChange: fn() },
   argTypes: { variant: { control: "radio", options: ["line", "pill"] }, items: { control: false }, value: { control: false } },
-  parameters: { docs: { description: { component: "Arrow keys move between tabs, Home/End jump to the first/last. Disabled tabs are skipped." } } },
+  parameters: {
+    componentSource: { files: { "Tabs.tsx": sourceTabsTsx, "Tabs.module.css": sourceTabsModuleCss } }, docs: { description: { component: "Arrow keys move between tabs, Home/End jump to the first/last. Disabled tabs are skipped." } } },
   decorators: [
     (Story) => (
       <div style={{ width: 560, maxWidth: "100%" }}>

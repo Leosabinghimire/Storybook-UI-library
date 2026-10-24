@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Card } from "@/components/Card/Card";
 import { Skeleton, SkeletonText } from "./Skeleton";
+import sourceSkeletonTsx from "./Skeleton.tsx?raw";
+import sourceSkeletonModuleCss from "./Skeleton.module.css?raw";
 
 const meta = {
   title: "Feedback/Skeleton",
   component: Skeleton,
   args: { width: 240, height: 16 },
+  parameters: { componentSource: { files: { "Skeleton.tsx": sourceSkeletonTsx, "Skeleton.module.css": sourceSkeletonModuleCss } } },
 } satisfies Meta<typeof Skeleton>;
 
 export default meta;

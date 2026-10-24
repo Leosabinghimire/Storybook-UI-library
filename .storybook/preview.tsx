@@ -1,6 +1,7 @@
 import type { Decorator, Preview } from "@storybook/react-vite";
 import { useEffect, type ReactNode } from "react";
 import { ToastProvider } from "../src/components/Toast/Toast";
+import { ComponentDocs } from "./ComponentDocs";
 import "../src/styles/index.css";
 import "./preview.css";
 
@@ -19,6 +20,8 @@ const withTheme: Decorator = (Story, context) => (
 
 const preview: Preview = {
   decorators: [withTheme],
+  // Generates a Docs page for every component (props table, examples, and the component source).
+  tags: ["autodocs"],
   globalTypes: {
     theme: {
       description: "Color theme",
@@ -41,7 +44,7 @@ const preview: Preview = {
     a11y: { test: "todo" },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i }, expanded: true },
     // "Code" tab in the addon panel showing the source of the current story.
-    docs: { codePanel: true },
+    docs: { codePanel: true, page: ComponentDocs },
     options: {
       storySort: {
         order: ["Introduction", "Design System", "Actions", "Forms", "Data Display", "Feedback", "Overlays", "Navigation"],

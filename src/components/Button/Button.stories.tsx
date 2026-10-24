@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { IconPlus, IconArrowDown } from "@/icons";
 import { Button } from "./Button";
+import sourceButtonTsx from "./Button.tsx?raw";
+import sourceButtonModuleCss from "./Button.module.css?raw";
 
 const meta = {
   title: "Actions/Button",
@@ -13,6 +15,7 @@ const meta = {
     leftIcon: { control: false },
     rightIcon: { control: false },
   },
+  parameters: { componentSource: { files: { "Button.tsx": sourceButtonTsx, "Button.module.css": sourceButtonModuleCss } } },
 } satisfies Meta<typeof Button>;
 
 export default meta;

@@ -4,6 +4,8 @@ import { fn } from "storybook/test";
 import { IconSearch } from "@/icons";
 import { NativeSelect } from "./NativeSelect";
 import { Select } from "./Select";
+import sourceSelectTsx from "./Select.tsx?raw";
+import sourceSelectModuleCss from "./Select.module.css?raw";
 
 const options = [
   { value: "eu-west", label: "Europe (Ireland)", description: "eu-west-1" },
@@ -20,6 +22,7 @@ const meta = {
   args: { label: "Region", options: plain, placeholder: "Choose a region", onChange: fn() },
   argTypes: { size: { control: "select", options: ["sm", "md", "lg"] }, options: { control: false }, value: { control: false }, leftSection: { control: false } },
   parameters: {
+    componentSource: { files: { "Select.tsx": sourceSelectTsx, "Select.module.css": sourceSelectModuleCss } },
     docs: {
       description: {
         component:

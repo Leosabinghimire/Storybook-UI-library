@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { PasswordInput } from "./PasswordInput";
+import sourcePasswordInputTsx from "./PasswordInput.tsx?raw";
+import sourceInputModuleCss from "./Input.module.css?raw";
 
 const meta = {
   title: "Forms/PasswordInput",
@@ -12,6 +14,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "PasswordInput.tsx": sourcePasswordInputTsx, "Input.module.css": sourceInputModuleCss } } },
 } satisfies Meta<typeof PasswordInput>;
 
 export default meta;

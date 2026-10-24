@@ -6,11 +6,14 @@ import { PasswordInput } from "@/components/Input/PasswordInput";
 import { TextInput } from "@/components/Input/TextInput";
 import { Select } from "@/components/Select/Select";
 import { FormField } from "./FormField";
+import sourceFormFieldTsx from "./FormField.tsx?raw";
+import sourceFormFieldModuleCss from "./FormField.module.css?raw";
 
 const meta = {
   title: "Forms/FormField",
   component: FormField,
   parameters: {
+    componentSource: { files: { "FormField.tsx": sourceFormFieldTsx, "FormField.module.css": sourceFormFieldModuleCss } },
     docs: {
       description: {
         component:

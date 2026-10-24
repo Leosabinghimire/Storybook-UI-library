@@ -3,10 +3,14 @@ import { useState } from "react";
 import { Button } from "@/components/Button/Button";
 import { useToast } from "@/components/Toast/Toast";
 import { ConfirmDialog } from "./ConfirmDialog";
+import sourceConfirmDialogTsx from "./ConfirmDialog.tsx?raw";
+import sourceModalModuleCss from "./Modal.module.css?raw";
+import sourceModalTsx from "./Modal.tsx?raw";
 
 const meta = {
   title: "Overlays/ConfirmDialog",
   component: ConfirmDialog,
+  parameters: { componentSource: { files: { "ConfirmDialog.tsx": sourceConfirmDialogTsx, "Modal.module.css": sourceModalModuleCss, "Modal.tsx": sourceModalTsx } } },
 } satisfies Meta<typeof ConfirmDialog>;
 
 export default meta;

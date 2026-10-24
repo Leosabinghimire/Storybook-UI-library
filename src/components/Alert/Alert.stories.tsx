@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { fn } from "storybook/test";
 import { Alert } from "./Alert";
+import sourceAlertTsx from "./Alert.tsx?raw";
+import sourceAlertModuleCss from "./Alert.module.css?raw";
 
 const TONES = ["info", "success", "warning", "danger", "neutral", "primary"] as const;
 
@@ -16,6 +18,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "Alert.tsx": sourceAlertTsx, "Alert.module.css": sourceAlertModuleCss } } },
 } satisfies Meta<typeof Alert>;
 
 export default meta;

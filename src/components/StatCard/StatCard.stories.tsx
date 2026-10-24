@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IconArrowUp, IconCircleCheck, IconInbox, IconInfo } from "@/icons";
 import { StatCard } from "./StatCard";
+import sourceStatCardTsx from "./StatCard.tsx?raw";
+import sourceStatCardModuleCss from "./StatCard.module.css?raw";
 
 const meta = {
   title: "Data Display/StatCard",
@@ -14,6 +16,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "StatCard.tsx": sourceStatCardTsx, "StatCard.module.css": sourceStatCardModuleCss } } },
 } satisfies Meta<typeof StatCard>;
 
 export default meta;

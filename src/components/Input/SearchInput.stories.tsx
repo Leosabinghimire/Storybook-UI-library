@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { fn } from "storybook/test";
 import { SearchInput } from "./SearchInput";
+import sourceSearchInputTsx from "./SearchInput.tsx?raw";
+import sourceInputModuleCss from "./Input.module.css?raw";
 
 const meta = {
   title: "Forms/SearchInput",
@@ -14,6 +16,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "SearchInput.tsx": sourceSearchInputTsx, "Input.module.css": sourceInputModuleCss } } },
 } satisfies Meta<typeof SearchInput>;
 
 export default meta;

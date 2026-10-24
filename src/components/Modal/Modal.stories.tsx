@@ -4,12 +4,15 @@ import { Button } from "@/components/Button/Button";
 import { TextInput } from "@/components/Input/TextInput";
 import { Select } from "@/components/Select/Select";
 import { Modal } from "./Modal";
+import sourceModalTsx from "./Modal.tsx?raw";
+import sourceModalModuleCss from "./Modal.module.css?raw";
 
 const meta = {
   title: "Overlays/Modal",
   component: Modal,
   argTypes: { size: { control: "select", options: ["sm", "md", "lg", "xl"] } },
   parameters: {
+    componentSource: { files: { "Modal.tsx": sourceModalTsx, "Modal.module.css": sourceModalModuleCss } },
     docs: {
       description: {
         component: "Focus is trapped inside the dialog and returned to the trigger on close. Escape and backdrop clicks close it unless `dismissible` is false.",

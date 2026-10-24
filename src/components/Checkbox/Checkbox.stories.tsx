@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { Checkbox } from "./Checkbox";
+import sourceCheckboxTsx from "./Checkbox.tsx?raw";
+import sourceCheckboxModuleCss from "./Checkbox.module.css?raw";
 
 const meta = {
   title: "Forms/Checkbox",
   component: Checkbox,
   args: { label: "Email me about product updates" },
+  parameters: { componentSource: { files: { "Checkbox.tsx": sourceCheckboxTsx, "Checkbox.module.css": sourceCheckboxModuleCss } } },
 } satisfies Meta<typeof Checkbox>;
 
 export default meta;

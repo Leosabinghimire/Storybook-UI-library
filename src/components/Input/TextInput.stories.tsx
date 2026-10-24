@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { IconSearch } from "@/icons";
 import { TextInput } from "./TextInput";
+import sourceTextInputTsx from "./TextInput.tsx?raw";
+import sourceInputModuleCss from "./Input.module.css?raw";
 
 const meta = {
   title: "Forms/TextInput",
@@ -18,6 +20,7 @@ const meta = {
       </div>
     ),
   ],
+  parameters: { componentSource: { files: { "TextInput.tsx": sourceTextInputTsx, "Input.module.css": sourceInputModuleCss } } },
 } satisfies Meta<typeof TextInput>;
 
 export default meta;

@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Spinner } from "./Spinner";
+import sourceSpinnerTsx from "./Spinner.tsx?raw";
+import sourceSpinnerModuleCss from "./Spinner.module.css?raw";
 
 const meta = {
   title: "Feedback/Spinner",
   component: Spinner,
   args: { size: "md" },
   argTypes: { size: { control: "select", options: ["sm", "md", "lg"] } },
+  parameters: { componentSource: { files: { "Spinner.tsx": sourceSpinnerTsx, "Spinner.module.css": sourceSpinnerModuleCss } } },
 } satisfies Meta<typeof Spinner>;
 
 export default meta;

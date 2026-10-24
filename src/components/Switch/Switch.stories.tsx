@@ -1,11 +1,14 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Switch } from "./Switch";
+import sourceSwitchTsx from "./Switch.tsx?raw";
+import sourceSwitchModuleCss from "./Switch.module.css?raw";
 
 const meta = {
   title: "Forms/Switch",
   component: Switch,
   args: { label: "Enable notifications" },
   argTypes: { size: { control: "radio", options: ["sm", "md"] }, labelPosition: { control: "radio", options: ["left", "right"] } },
+  parameters: { componentSource: { files: { "Switch.tsx": sourceSwitchTsx, "Switch.module.css": sourceSwitchModuleCss } } },
 } satisfies Meta<typeof Switch>;
 
 export default meta;

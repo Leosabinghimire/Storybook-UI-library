@@ -4,6 +4,8 @@ import { Button } from "@/components/Button/Button";
 import { IconButton } from "@/components/IconButton/IconButton";
 import { IconArrowDown, IconChevronDown, IconDots, IconPlus, IconX } from "@/icons";
 import { Dropdown } from "./Dropdown";
+import sourceDropdownTsx from "./Dropdown.tsx?raw";
+import sourceDropdownModuleCss from "./Dropdown.module.css?raw";
 
 const items = [
   { key: "edit", label: "Edit", icon: <IconPlus size={16} />, onSelect: fn() },
@@ -25,6 +27,7 @@ const meta = {
   },
   argTypes: { trigger: { control: false }, align: { control: "radio", options: ["start", "end"] } },
   parameters: {
+    componentSource: { files: { "Dropdown.tsx": sourceDropdownTsx, "Dropdown.module.css": sourceDropdownModuleCss } },
     docs: { description: { component: "Opens on click or Arrow Down/Up. Arrow keys move, Home/End jump, Escape closes and returns focus to the trigger." } },
   },
 } satisfies Meta<typeof Dropdown>;

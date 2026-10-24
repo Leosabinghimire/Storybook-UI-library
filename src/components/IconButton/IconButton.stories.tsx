@@ -3,6 +3,8 @@ import { fn } from "storybook/test";
 import { IconDots, IconPlus, IconX } from "@/icons";
 import { Tooltip } from "@/components/Tooltip/Tooltip";
 import { IconButton } from "./IconButton";
+import sourceIconButtonTsx from "./IconButton.tsx?raw";
+import sourceIconButtonModuleCss from "./IconButton.module.css?raw";
 
 const meta = {
   title: "Actions/IconButton",
@@ -13,7 +15,8 @@ const meta = {
     size: { control: "select", options: ["sm", "md", "lg"] },
     icon: { control: false },
   },
-  parameters: { docs: { description: { component: "Icon-only button. `label` is required and becomes the accessible name and native tooltip." } } },
+  parameters: {
+    componentSource: { files: { "IconButton.tsx": sourceIconButtonTsx, "IconButton.module.css": sourceIconButtonModuleCss } }, docs: { description: { component: "Icon-only button. `label` is required and becomes the accessible name and native tooltip." } } },
 } satisfies Meta<typeof IconButton>;
 
 export default meta;

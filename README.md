@@ -38,6 +38,10 @@ npm run storybook        # http://localhost:6006
 | `npm test` | Vitest: unit tests (jsdom) plus every story rendered in headless Chromium via the Storybook Vitest addon |
 | `npm run test:unit` | Unit tests only (fast) |
 
+Every component has a **Docs** page (props table, examples with "Show code", and a *Component source*
+section with the `.tsx` and `.module.css` files), and a **Code** tab in the addon panel shows the JSX of
+the story you are viewing.
+
 Stories double as tests: the **Storybook Vitest addon** renders each story in Chromium and fails on
 render errors, play-function failures and accessibility violations. In Storybook, the *Testing module*
 panel in the sidebar runs them on demand. On every push, the GitHub Actions workflow in
