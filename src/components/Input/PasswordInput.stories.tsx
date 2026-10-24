@@ -7,7 +7,7 @@ const meta = {
   args: { label: "Password", placeholder: "At least 8 characters" },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 360 }}>
+      <div style={{ width: 360, maxWidth: "100%" }}>
         <Story />
       </div>
     ),

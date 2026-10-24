@@ -9,7 +9,7 @@ const meta = {
   argTypes: { icon: { control: false }, formatDelta: { control: false } },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 320 }}>
+      <div style={{ width: 320, maxWidth: "100%" }}>
         <Story />
       </div>
     ),
@@ -34,7 +34,7 @@ export const NoTrend: Story = { args: { delta: undefined, hint: "Updated just no
 
 export const Dashboard: Story = {
   render: () => (
-    <div className="sb-grid" style={{ maxWidth: 1000 }}>
+    <div className="sb-grid" style={{ width: 1000, maxWidth: "100%" }}>
       <StatCard label="Revenue" value="$48,250" delta={12.5} formatDelta={(d) => `${d > 0 ? "+" : ""}${d}%`} hint="vs last month" icon={<IconArrowUp size={22} />} />
       <StatCard label="Orders" value="1,284" delta={-3.2} formatDelta={(d) => `${d}%`} icon={<IconInbox size={22} />} />
       <StatCard label="Conversion" value="3.8%" delta={0.4} formatDelta={(d) => `+${d} pt`} icon={<IconCircleCheck size={22} />} />
@@ -42,4 +42,5 @@ export const Dashboard: Story = {
     </div>
   ),
   decorators: [(Story) => <Story />],
+  parameters: { layout: "padded" },
 };

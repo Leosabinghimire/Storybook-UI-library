@@ -15,11 +15,11 @@ export const Default: Story = {};
 
 export const Circle: Story = { args: { circle: true, width: 48 } };
 
-export const Text: Story = { render: () => <SkeletonText lines={4} /> , decorators: [(Story) => <div style={{ maxWidth: 360 }}><Story /></div>] };
+export const Text: Story = { render: () => <SkeletonText lines={4} /> , decorators: [(Story) => <div style={{ width: 360, maxWidth: "100%" }}><Story /></div>] };
 
 export const CardPlaceholder: Story = {
   render: () => (
-    <Card style={{ maxWidth: 360 }}>
+    <Card style={{ width: 360, maxWidth: "100%" }}>
       <div style={{ display: "flex", gap: 12, alignItems: "center", marginBottom: 16 }}>
         <Skeleton circle width={40} />
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 6 }}>

@@ -16,7 +16,7 @@ const meta = {
   argTypes: { variant: { control: "radio", options: ["default", "separated"] }, items: { control: false }, value: { control: false } },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 560 }}>
+      <div style={{ width: 560, maxWidth: "100%" }}>
         <Story />
       </div>
     ),

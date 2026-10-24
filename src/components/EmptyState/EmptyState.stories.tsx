@@ -17,7 +17,7 @@ const meta = {
   argTypes: { icon: { control: false }, action: { control: false } },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 560 }}>
+      <div style={{ width: 560, maxWidth: "100%" }}>
         <Story />
       </div>
     ),

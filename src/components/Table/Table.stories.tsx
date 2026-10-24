@@ -54,6 +54,7 @@ const meta = {
   args: { columns, data: CUSTOMERS, caption: "Customers" },
   argTypes: { columns: { control: false }, data: { control: false } },
   parameters: {
+    layout: "padded",
     docs: {
       description: {
         component:

@@ -20,7 +20,7 @@ const meta = {
   parameters: { docs: { description: { component: "Arrow keys move between tabs, Home/End jump to the first/last. Disabled tabs are skipped." } } },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 560 }}>
+      <div style={{ width: 560, maxWidth: "100%" }}>
         <Story />
       </div>
     ),

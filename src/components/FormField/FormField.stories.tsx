@@ -25,7 +25,7 @@ type Story = StoryObj;
 
 export const CustomControl: Story = {
   render: () => (
-    <div style={{ maxWidth: 360 }}>
+    <div style={{ width: 360, maxWidth: "100%" }}>
       <FormField label="Color" hint="Pick your accent color." required>
         {(field) => <input type="color" defaultValue="#4f62e6" {...field} style={{ width: 64, height: 40, border: "1px solid var(--ui-border-strong)", borderRadius: 8 }} />}
       </FormField>
@@ -59,7 +59,7 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={onSubmit} noValidate className="sb-col" style={{ maxWidth: 400 }}>
+    <form onSubmit={onSubmit} noValidate className="sb-col" style={{ width: 400, maxWidth: "100%" }}>
       <TextInput name="name" label="Full name" required error={errors.name} autoComplete="name" />
       <TextInput name="email" type="email" label="Email" required error={errors.email} hint="We will send a confirmation link." autoComplete="email" />
       <PasswordInput name="password" label="Password" required error={errors.password} autoComplete="new-password" />

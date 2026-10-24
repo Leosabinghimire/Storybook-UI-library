@@ -35,7 +35,8 @@ const preview: Preview = {
   },
   initialGlobals: { theme: "light" },
   parameters: {
-    layout: "padded",
+    // Small components sit in the middle of the canvas; wide ones opt into "padded" per story.
+    layout: "centered",
     backgrounds: { disable: true },
     a11y: { test: "todo" },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i }, expanded: true },

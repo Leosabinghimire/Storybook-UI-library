@@ -16,7 +16,7 @@ const meta = {
   argTypes: { size: { control: "select", options: ["sm", "md", "lg"] } },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 360 }}>
+      <div style={{ width: 360, maxWidth: "100%" }}>
         <Story />
       </div>
     ),

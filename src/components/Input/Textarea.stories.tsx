@@ -7,7 +7,7 @@ const meta = {
   args: { label: "Description", placeholder: "Describe the issue in a few sentences", rows: 4 },
   decorators: [
     (Story) => (
-      <div style={{ maxWidth: 420 }}>
+      <div style={{ width: 420, maxWidth: "100%" }}>
         <Story />
       </div>
     ),
