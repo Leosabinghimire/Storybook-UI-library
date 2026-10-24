@@ -1,0 +1,39 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# my-ui-library
+
+A reusable React + TypeScript component library with a token-based design system. No runtime
+dependencies beyond React: styling is plain CSS Modules on top of CSS custom properties, so the
+library drops into any React or Next.js app.
+
+## Sections
+
+- **Design System** — color tokens, typography, spacing, radii and shadows, and how light/dark themes work.
+- **Actions** — Button, IconButton, Dropdown.
+- **Forms** — TextInput, PasswordInput, SearchInput, Textarea, Select, Checkbox, Radio, Switch, FormField.
+- **Data Display** — Badge, StatusIndicator, Card, StatCard, Table, Pagination.
+- **Feedback** — Alert, Toast, Tooltip, Spinner, Skeleton, EmptyState.
+- **Overlays** — Modal, ConfirmDialog.
+- **Navigation** — Tabs, Accordion.
+
+## Quick start
+
+```tsx
+import { Button, ThemeProvider, ToastProvider } from "my-ui-library";
+import "my-ui-library/styles.css";
+
+export function App() {
+  return (
+    <ThemeProvider>
+      <ToastProvider>
+        <Button>Save changes</Button>
+      </ToastProvider>
+    </ThemeProvider>
+  );
+}
+```
+
+Use the **Theme** toolbar button to preview every story in light and dark mode, the **Controls**
+panel to change props, and the **Accessibility** panel to see axe results.

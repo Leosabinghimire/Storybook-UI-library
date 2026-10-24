@@ -1,0 +1,71 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  background: transparent;
+  color: var(--ui-text-muted);
+  cursor: pointer;
+  transition:
+    background-color var(--ui-duration-fast) var(--ui-ease),
+    color var(--ui-duration-fast) var(--ui-ease);
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus-ring);
+}
+
+.sm {
+  width: var(--ui-control-sm);
+  height: var(--ui-control-sm);
+}
+
+.md {
+  width: var(--ui-control-md);
+  height: var(--ui-control-md);
+}
+
+.lg {
+  width: var(--ui-control-lg);
+  height: var(--ui-control-lg);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--ui-surface-hover);
+  color: var(--ui-text);
+}
+
+.outline {
+  background: var(--ui-surface);
+  border-color: var(--ui-border-strong);
+  color: var(--ui-text);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--ui-surface-hover);
+}
+
+.primary {
+  background: var(--ui-primary);
+  color: var(--ui-text-on-primary);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--ui-primary-hover);
+}
+
+.danger {
+  color: var(--ui-danger-text);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--ui-danger-soft);
+}

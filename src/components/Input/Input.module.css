@@ -1,0 +1,120 @@
+/* Shared styles for text-like controls: TextInput, PasswordInput, SearchInput, Textarea, Select. */
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.control {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--ui-border-strong);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  font: inherit;
+  font-size: var(--ui-text-sm);
+  line-height: 1.4;
+  transition:
+    border-color var(--ui-duration-fast) var(--ui-ease),
+    box-shadow var(--ui-duration-fast) var(--ui-ease);
+}
+
+.control::placeholder {
+  color: var(--ui-text-subtle);
+}
+
+.control:hover:not(:disabled) {
+  border-color: var(--ui-text-subtle);
+}
+
+.control:focus-visible {
+  outline: none;
+  border-color: var(--ui-primary);
+  box-shadow: var(--ui-focus-ring);
+}
+
+.control:disabled {
+  background: var(--ui-surface-muted);
+  color: var(--ui-text-muted);
+  cursor: not-allowed;
+}
+
+.control[aria-invalid="true"] {
+  border-color: var(--ui-danger);
+}
+
+.control[aria-invalid="true"]:focus-visible {
+  box-shadow: 0 0 0 3px var(--ui-danger-soft);
+}
+
+.sm {
+  height: var(--ui-control-sm);
+  padding: 0 var(--ui-space-3);
+}
+
+.md {
+  height: var(--ui-control-md);
+  padding: 0 var(--ui-space-3);
+  font-size: var(--ui-text-md);
+}
+
+.lg {
+  height: var(--ui-control-lg);
+  padding: 0 var(--ui-space-4);
+  font-size: var(--ui-text-md);
+}
+
+.withLeft {
+  padding-left: var(--ui-space-10);
+}
+
+.withRight {
+  padding-right: var(--ui-space-10);
+}
+
+.section {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ui-space-10);
+  color: var(--ui-text-subtle);
+  pointer-events: none;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.interactive {
+  pointer-events: auto;
+}
+
+.textarea {
+  height: auto;
+  min-height: calc(var(--ui-control-md) * 2);
+  padding: var(--ui-space-2) var(--ui-space-3);
+  resize: vertical;
+}
+
+.select {
+  appearance: none;
+  padding-right: var(--ui-space-10);
+  cursor: pointer;
+}
+
+.select option {
+  color: initial;
+}
+
+.select:has(option[value=""]:checked) {
+  color: var(--ui-text-muted);
+}

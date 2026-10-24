@@ -1,0 +1,17 @@
+.root {
+  display: block;
+  border-radius: var(--ui-radius-sm);
+  background: linear-gradient(90deg, var(--ui-skeleton-base) 25%, var(--ui-skeleton-highlight) 50%, var(--ui-skeleton-base) 75%);
+  background-size: 200% 100%;
+  animation: ui-shimmer 1.4s linear infinite;
+}
+
+.circle {
+  border-radius: var(--ui-radius-full);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-2);
+}

@@ -1,0 +1,71 @@
+.root {
+  position: relative;
+  display: inline-flex;
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: var(--ui-z-dropdown);
+  display: flex;
+  flex-direction: column;
+  min-width: 11rem;
+  padding: var(--ui-space-1);
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-md);
+  background: var(--ui-surface);
+  box-shadow: var(--ui-shadow-md);
+  animation: ui-pop-in var(--ui-duration-fast) var(--ui-ease);
+}
+
+.alignEnd {
+  left: auto;
+  right: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+  width: 100%;
+  padding: var(--ui-space-2) var(--ui-space-3);
+  border: 0;
+  border-radius: var(--ui-radius-sm);
+  background: transparent;
+  color: var(--ui-text);
+  font: inherit;
+  font-size: var(--ui-text-sm);
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.item:hover:not(:disabled),
+.item:focus-visible {
+  background: var(--ui-surface-hover);
+  outline: none;
+}
+
+.item:disabled {
+  color: var(--ui-text-subtle);
+  cursor: not-allowed;
+}
+
+.danger {
+  color: var(--ui-danger-text);
+}
+
+.danger:hover:not(:disabled),
+.danger:focus-visible {
+  background: var(--ui-danger-soft);
+}
+
+.icon {
+  display: inline-flex;
+  color: var(--ui-text-muted);
+}
+
+.danger .icon {
+  color: inherit;
+}

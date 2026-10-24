@@ -1,0 +1,129 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  font: inherit;
+  font-weight: var(--ui-weight-semibold);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--ui-duration-fast) var(--ui-ease),
+    border-color var(--ui-duration-fast) var(--ui-ease),
+    color var(--ui-duration-fast) var(--ui-ease),
+    box-shadow var(--ui-duration-fast) var(--ui-ease);
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus-ring);
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-2);
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.loading .content {
+  /* opacity (not visibility) keeps the label in the accessible name while loading */
+  opacity: 0;
+}
+
+.spinner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sizes */
+.sm {
+  height: var(--ui-control-sm);
+  padding: 0 var(--ui-space-3);
+  font-size: var(--ui-text-sm);
+}
+
+.md {
+  height: var(--ui-control-md);
+  padding: 0 var(--ui-space-4);
+  font-size: var(--ui-text-sm);
+}
+
+.lg {
+  height: var(--ui-control-lg);
+  padding: 0 var(--ui-space-5);
+  font-size: var(--ui-text-md);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* Variants */
+.primary {
+  background: var(--ui-primary);
+  color: var(--ui-text-on-primary);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--ui-primary-hover);
+}
+
+.primary:active:not(:disabled) {
+  background: var(--ui-primary-active);
+}
+
+.secondary {
+  background: var(--ui-primary-soft);
+  color: var(--ui-primary-text);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--ui-primary-soft-hover);
+}
+
+.outline {
+  background: var(--ui-surface);
+  border-color: var(--ui-border-strong);
+  color: var(--ui-text);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--ui-surface-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--ui-text-muted);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--ui-surface-hover);
+  color: var(--ui-text);
+}
+
+.danger {
+  background: var(--ui-danger);
+  color: var(--ui-on-danger);
+}
+
+.danger:hover:not(:disabled) {
+  background: var(--ui-danger-hover);
+}

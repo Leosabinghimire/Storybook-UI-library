@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-1);
+  min-width: 0;
+}
+
+.label {
+  font-size: var(--ui-text-sm);
+  font-weight: var(--ui-weight-medium);
+  color: var(--ui-text);
+}
+
+.required {
+  margin-left: 2px;
+  color: var(--ui-danger);
+}
+
+.hint,
+.error {
+  margin: 0;
+  font-size: var(--ui-text-xs);
+  line-height: 1.4;
+}
+
+.hint {
+  color: var(--ui-text-muted);
+}
+
+.error {
+  color: var(--ui-danger-text);
+}

@@ -1,0 +1,163 @@
+/* Design tokens. Every component reads from these variables only, so a theme is just a different set of values. */
+:root {
+  color-scheme: light;
+
+  /* Typography */
+  --ui-font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ui-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --ui-text-xs: 0.75rem;
+  --ui-text-sm: 0.875rem;
+  --ui-text-md: 0.9375rem;
+  --ui-text-lg: 1.125rem;
+  --ui-text-xl: 1.375rem;
+  --ui-text-2xl: 1.75rem;
+  --ui-text-3xl: 2.25rem;
+  --ui-leading-tight: 1.25;
+  --ui-leading-normal: 1.5;
+  --ui-weight-normal: 400;
+  --ui-weight-medium: 500;
+  --ui-weight-semibold: 600;
+  --ui-weight-bold: 700;
+
+  /* Spacing (4px scale) */
+  --ui-space-1: 0.25rem;
+  --ui-space-2: 0.5rem;
+  --ui-space-3: 0.75rem;
+  --ui-space-4: 1rem;
+  --ui-space-5: 1.25rem;
+  --ui-space-6: 1.5rem;
+  --ui-space-8: 2rem;
+  --ui-space-10: 2.5rem;
+  --ui-space-12: 3rem;
+
+  /* Control sizes */
+  --ui-control-sm: 2rem;
+  --ui-control-md: 2.5rem;
+  --ui-control-lg: 3rem;
+
+  /* Radii */
+  --ui-radius-sm: 0.375rem;
+  --ui-radius-md: 0.5rem;
+  --ui-radius-lg: 0.75rem;
+  --ui-radius-xl: 1rem;
+  --ui-radius-full: 9999px;
+
+  /* Shadows */
+  --ui-shadow-sm: 0 1px 2px rgb(16 24 40 / 0.06);
+  --ui-shadow-md: 0 4px 12px -2px rgb(16 24 40 / 0.1), 0 2px 4px -2px rgb(16 24 40 / 0.06);
+  --ui-shadow-lg: 0 16px 32px -8px rgb(16 24 40 / 0.16), 0 6px 12px -6px rgb(16 24 40 / 0.08);
+
+  /* Motion */
+  --ui-duration-fast: 120ms;
+  --ui-duration-normal: 200ms;
+  --ui-ease: cubic-bezier(0.2, 0, 0, 1);
+
+  /* Layering */
+  --ui-z-dropdown: 1000;
+  --ui-z-modal: 1100;
+  --ui-z-tooltip: 1200;
+  --ui-z-toast: 1300;
+
+  /* Palette (light) */
+  --ui-bg: #f6f7fb;
+  --ui-surface: #ffffff;
+  --ui-surface-muted: #f3f4f8;
+  --ui-surface-hover: #eef0f5;
+  --ui-border: #e3e6ee;
+  --ui-border-strong: #c9cedb;
+  --ui-text: #171b26;
+  --ui-text-muted: #5b6275;
+  --ui-text-subtle: #6f7689;
+  --ui-text-on-primary: #ffffff;
+  --ui-overlay: rgb(16 20 30 / 0.5);
+
+  --ui-primary: #4f62e6;
+  --ui-primary-hover: #4052cd;
+  --ui-primary-active: #3748b8;
+  --ui-primary-soft: #eef0ff;
+  --ui-primary-soft-hover: #dde1fd;
+  --ui-primary-text: #3748b8;
+
+  --ui-success: #0f8060;
+  --ui-success-soft: #e3f7f0;
+  --ui-success-text: #0b6e52;
+  --ui-warning: #d98b06;
+  --ui-warning-soft: #fff4de;
+  --ui-warning-text: #935c00;
+  --ui-danger: #d4323f;
+  --ui-danger-hover: #bd2a36;
+  --ui-danger-soft: #fdeaec;
+  --ui-danger-text: #b1283a;
+  --ui-info: #1a73c4;
+  --ui-info-soft: #e5f1fc;
+  --ui-info-text: #145f9d;
+  --ui-neutral: #6b7286;
+  --ui-neutral-soft: #eceef3;
+  --ui-neutral-text: #434a5c;
+
+  /* Text colors that pass AA on the solid tone backgrounds above */
+  --ui-on-success: #ffffff;
+  --ui-on-warning: #1f1400;
+  --ui-on-danger: #ffffff;
+  --ui-on-info: #ffffff;
+  --ui-on-neutral: #ffffff;
+
+  --ui-focus-ring: 0 0 0 3px rgb(79 98 230 / 0.35);
+  --ui-skeleton-base: #e8eaf0;
+  --ui-skeleton-highlight: #f5f6f9;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ui-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --ui-shadow-md: 0 4px 12px -2px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --ui-shadow-lg: 0 16px 32px -8px rgb(0 0 0 / 0.6), 0 6px 12px -6px rgb(0 0 0 / 0.5);
+
+  --ui-bg: #0d0f15;
+  --ui-surface: #171a23;
+  --ui-surface-muted: #1f232e;
+  --ui-surface-hover: #262b38;
+  --ui-border: #2b3040;
+  --ui-border-strong: #3d4356;
+  --ui-text: #eceef4;
+  --ui-text-muted: #a4aabb;
+  --ui-text-subtle: #8a90a8;
+  --ui-text-on-primary: #ffffff;
+  --ui-overlay: rgb(0 0 0 / 0.6);
+
+  --ui-primary: #5468e3;
+  --ui-primary-hover: #6476e8;
+  --ui-primary-active: #4a5ddc;
+  --ui-primary-soft: rgb(111 128 238 / 0.16);
+  --ui-primary-soft-hover: rgb(111 128 238 / 0.26);
+  --ui-primary-text: #aab5f7;
+
+  --ui-success: #2fc191;
+  --ui-success-soft: rgb(47 193 145 / 0.16);
+  --ui-success-text: #7fe0bf;
+  --ui-warning: #f0a829;
+  --ui-warning-soft: rgb(240 168 41 / 0.16);
+  --ui-warning-text: #f6c976;
+  --ui-danger: #f05b6a;
+  --ui-danger-hover: #f3788a;
+  --ui-danger-soft: rgb(240 91 106 / 0.16);
+  --ui-danger-text: #f8a3ac;
+  --ui-info: #4ea2e9;
+  --ui-info-soft: rgb(78 162 233 / 0.16);
+  --ui-info-text: #9ccdf5;
+  --ui-neutral: #8d94a8;
+  --ui-neutral-soft: rgb(141 148 168 / 0.16);
+  --ui-neutral-text: #c3c8d6;
+
+  /* Dark tone colors are bright, so text on them is dark */
+  --ui-on-success: #0d0f15;
+  --ui-on-warning: #0d0f15;
+  --ui-on-danger: #0d0f15;
+  --ui-on-info: #0d0f15;
+  --ui-on-neutral: #0d0f15;
+
+  --ui-focus-ring: 0 0 0 3px rgb(111 128 238 / 0.45);
+  --ui-skeleton-base: #262b38;
+  --ui-skeleton-highlight: #323849;
+}

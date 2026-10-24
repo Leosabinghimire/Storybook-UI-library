@@ -1,0 +1,126 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ui-space-3);
+}
+
+.scroll {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-lg);
+  background: var(--ui-surface);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--ui-text-sm);
+}
+
+.caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.table th,
+.table td {
+  padding: var(--ui-space-3) var(--ui-space-4);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.compact th,
+.compact td {
+  padding: var(--ui-space-2) var(--ui-space-3);
+}
+
+.table th {
+  border-bottom: 1px solid var(--ui-border);
+  background: var(--ui-surface-muted);
+  color: var(--ui-text-muted);
+  font-size: var(--ui-text-xs);
+  font-weight: var(--ui-weight-semibold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.table tbody tr + tr td {
+  border-top: 1px solid var(--ui-border);
+}
+
+.table tbody tr:hover td {
+  background: var(--ui-surface-hover);
+}
+
+.striped tbody tr:nth-child(even) td {
+  background: var(--ui-surface-muted);
+}
+
+.selected td,
+.striped .selected td {
+  background: var(--ui-primary-soft);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ui-space-1);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  border-radius: var(--ui-radius-sm);
+}
+
+.sortButton:hover {
+  color: var(--ui-text);
+}
+
+.sortButton:focus-visible {
+  outline: none;
+  box-shadow: var(--ui-focus-ring);
+}
+
+.sortIcon {
+  opacity: 0.5;
+}
+
+.sortActive {
+  opacity: 1;
+  color: var(--ui-primary-text);
+}
+
+.emptyCell {
+  padding: var(--ui-space-6) !important;
+  text-align: center !important;
+}
+
+.emptyText {
+  color: var(--ui-text-muted);
+}
+
+.pagination {
+  padding: 0 var(--ui-space-1);
+}

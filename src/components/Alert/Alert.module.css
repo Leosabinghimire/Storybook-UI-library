@@ -1,0 +1,77 @@
+.root {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ui-space-3);
+  padding: var(--ui-space-3) var(--ui-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--ui-radius-md);
+  background: var(--alert-soft);
+  color: var(--ui-text);
+  font-size: var(--ui-text-sm);
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--alert-color);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-weight: var(--ui-weight-semibold);
+  color: var(--alert-text);
+}
+
+.title + .body {
+  margin-top: var(--ui-space-1);
+}
+
+.body {
+  color: var(--ui-text);
+}
+
+.body a {
+  color: var(--alert-text);
+  font-weight: var(--ui-weight-medium);
+}
+
+.close {
+  margin: -4px -6px -4px 0;
+}
+
+.neutral {
+  --alert-color: var(--ui-neutral);
+  --alert-soft: var(--ui-neutral-soft);
+  --alert-text: var(--ui-neutral-text);
+}
+.primary {
+  --alert-color: var(--ui-primary);
+  --alert-soft: var(--ui-primary-soft);
+  --alert-text: var(--ui-primary-text);
+}
+.info {
+  --alert-color: var(--ui-info);
+  --alert-soft: var(--ui-info-soft);
+  --alert-text: var(--ui-info-text);
+}
+.success {
+  --alert-color: var(--ui-success);
+  --alert-soft: var(--ui-success-soft);
+  --alert-text: var(--ui-success-text);
+}
+.warning {
+  --alert-color: var(--ui-warning);
+  --alert-soft: var(--ui-warning-soft);
+  --alert-text: var(--ui-warning-text);
+}
+.danger {
+  --alert-color: var(--ui-danger);
+  --alert-soft: var(--ui-danger-soft);
+  --alert-text: var(--ui-danger-text);
+}

@@ -1,0 +1,51 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Design System/Theming" />
+
+# Theming
+
+Every component reads colors, spacing, radii and shadows from CSS custom properties defined in
+`src/styles/tokens.css`. Light values live on `:root`; dark values are applied when the document has
+`data-theme="dark"`.
+
+## Switching themes
+
+Wrap the app in `ThemeProvider`. It sets `data-theme` on `<html>`, follows the system preference by
+default, remembers an explicit choice in `localStorage`, and exposes the current theme:
+
+```tsx
+import { Button, ThemeProvider, useTheme } from "my-ui-library";
+
+function ThemeToggle() {
+  const { theme, toggle } = useTheme();
+  return <Button variant="outline" onClick={toggle}>Switch to {theme === "dark" ? "light" : "dark"}</Button>;
+}
+
+export function App() {
+  return (
+    <ThemeProvider defaultPreference="system">
+      <ThemeToggle />
+    </ThemeProvider>
+  );
+}
+```
+
+Without the provider you can set the attribute yourself: `document.documentElement.dataset.theme = "dark"`.
+
+## Customizing
+
+Override any token after importing the library styles:
+
+```css
+:root {
+  --ui-primary: #0f766e;
+  --ui-primary-hover: #0d655e;
+  --ui-primary-soft: #e6f4f2;
+  --ui-primary-text: #0b5a53;
+  --ui-radius-md: 4px;
+  --ui-font-sans: "Your Font", system-ui, sans-serif;
+}
+```
+
+Tokens are grouped by role (`--ui-primary`, `--ui-primary-soft`, `--ui-primary-text`, …) so a brand
+change touches a handful of values rather than every component.
