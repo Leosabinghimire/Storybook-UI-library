@@ -45,6 +45,13 @@
   border-color: var(--ui-danger);
 }
 
+/* SearchInput renders its own clear button; hide the one Chromium/Safari add to type="search". */
+.control[type="search"]::-webkit-search-cancel-button,
+.control[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .control[aria-invalid="true"]:focus-visible {
   box-shadow: 0 0 0 3px var(--ui-danger-soft);
 }
