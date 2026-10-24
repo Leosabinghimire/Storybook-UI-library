@@ -40,6 +40,8 @@ const preview: Preview = {
     backgrounds: { disable: true },
     a11y: { test: "todo" },
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i }, expanded: true },
+    // "Code" tab in the addon panel showing the source of the current story.
+    docs: { codePanel: true },
     options: {
       storySort: {
         order: ["Introduction", "Design System", "Actions", "Forms", "Data Display", "Feedback", "Overlays", "Navigation"],
